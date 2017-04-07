@@ -6,12 +6,12 @@ pipeline {
                 bat 'mvn clean package'
             }
         }
-        stage('Code Coverage')
+        stage('Code Coverage') {
             steps {
                 bat 'mvn cobertura:cobertura -Pmetrics'
             }
         }
-        stage('Static Code Analysis')
+        stage('Static Code Analysis') {
             steps {
                 bat 'sonar-scanner'
             }
