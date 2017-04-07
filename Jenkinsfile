@@ -20,7 +20,7 @@ pipeline {
     post {
         always {
             junit '**/target/surefire-reports/*.xml'
-            publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'target/site/cobertura', reportFiles: 'index.html', reportName: 'HTML Report'])
+            publishHTML([reportDir: 'target/site/cobertura', reportFiles: 'index.html', reportName: 'HTML Report'])
         }
     }
 }
